@@ -1,0 +1,420 @@
+/* Luxury Restaurant Website Styles for AURÉLION */
+:root {
+    --black: #181818;
+    --charcoal: #232323;
+    --gold: #D4AF37;
+    --ivory: #F5F5ED;
+    --white: #fff;
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: var(--black);
+    color: var(--ivory);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(24,24,24,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3vw;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.navbar a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+.navbar a:hover, .navbar a.active {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(24,24,24,0.8), rgba(24,24,24,0.8)), url('assets/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+    color: var(--ivory);
+    animation: fadeIn 1.2s;
+}
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+.tagline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--ivory);
+}
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+.btn {
+    padding: 0.8rem 2.2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow);
+}
+.btn-gold {
+    background: var(--gold);
+    color: var(--black);
+}
+.btn-gold:hover {
+    background: var(--ivory);
+    color: var(--gold);
+}
+.btn-outline {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+}
+.btn-outline:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+section {
+    padding: 4rem 0 3rem 0;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.about-content {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.about-text {
+    max-width: 400px;
+}
+.about-image img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--gold);
+}
+
+.menu-section {
+    text-align: center;
+}
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.menu-tab {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.menu-tab.active, .menu-tab:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.menu-card {
+    background: rgba(35,35,35,0.85);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.2rem;
+    min-width: 220px;
+    max-width: 260px;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    border: 2px solid transparent;
+    position: relative;
+}
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px 0 rgba(212,175,55,0.15);
+    border: 2px solid var(--gold);
+}
+.menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+}
+.menu-card .price {
+    color: var(--ivory);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.menu-card p {
+    color: var(--ivory);
+    font-size: 0.98rem;
+    margin: 0;
+}
+
+.gallery-section {
+    text-align: center;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.gallery-grid img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 32px 0 rgba(212,175,55,0.18);
+}
+
+.reservation-section {
+    text-align: center;
+}
+.reservation-form {
+    background: rgba(35,35,35,0.85);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 2rem 1.5rem;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 2px solid var(--gold);
+    backdrop-filter: blur(6px);
+}
+.reservation-form input, .reservation-form button {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.reservation-form input {
+    background: var(--charcoal);
+    color: var(--ivory);
+    border: 1.5px solid var(--gold);
+    outline: none;
+    transition: border 0.2s;
+}
+.reservation-form input:focus {
+    border: 2px solid var(--gold);
+}
+
+.testimonials-section {
+    text-align: center;
+}
+.testimonials-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.testimonial-card {
+    background: rgba(35,35,35,0.85);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.2rem;
+    min-width: 220px;
+    max-width: 320px;
+    border: 2px solid var(--gold);
+    color: var(--ivory);
+    font-size: 1.05rem;
+    position: relative;
+}
+.testimonial-rating {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.testimonial-author {
+    color: var(--ivory);
+    font-size: 0.98rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.contact-section {
+    text-align: center;
+}
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+.contact-map iframe {
+    border-radius: 12px;
+    border: 2px solid var(--gold);
+}
+.contact-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+.social-icon {
+    font-size: 1.6rem;
+    color: var(--gold);
+    background: var(--charcoal);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+}
+.social-icon:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.footer {
+    background: var(--charcoal);
+    color: var(--gold);
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+}
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    margin: 0.5rem 0;
+}
+.footer-links a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    color: var(--ivory);
+}
+.footer-copy {
+    font-size: 0.95rem;
+    color: var(--ivory);
+}
+
+@media (max-width: 900px) {
+    .about-content, .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .testimonials-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    .navbar ul {
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 2.5rem 0 2rem 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
