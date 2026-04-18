@@ -1,4 +1,8 @@
+
 import './App.css';
+import { useEffect } from 'react';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import Menu from './Menu';
 
 // Placeholder images (replace with your Indian restaurant images in assets/)
 const heroVideo = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80';
@@ -13,9 +17,8 @@ const galleryImgs = [
   'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80',
 ];
 
-import { useEffect } from 'react';
-
-function App() {
+function Home() {
+  const navigate = useNavigate();
   useEffect(() => {
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
@@ -33,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <div className="aurelion-root">
+    <div className="aurelion-root relative">
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-logo">AURÉLION</div>
@@ -44,6 +47,7 @@ function App() {
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#reservation">Reserve</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
+          <li><Link to="/menu">View Menu</Link></li>
         </ul>
       </nav>
 
@@ -55,7 +59,8 @@ function App() {
         </div>
         <div className="hero-content">
           <h1 className="hero-title">A Culinary Experience Beyond Taste</h1>
-          <a href="#reservation" className="hero-cta">Reserve Table</a>
+          <button className="hero-cta" onClick={() => navigate('/menu')}>View Menu</button>
+          <a href="#reservation" className="hero-cta" style={{marginLeft: '1rem'}}>Reserve Table</a>
         </div>
       </header>
 
@@ -160,6 +165,15 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/menu" element={<Menu />} />
+    </Routes>
   );
 }
 
